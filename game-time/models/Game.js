@@ -7,10 +7,17 @@ const GameSchema = new Schema({
     gameDate: {
         type: Date
     }
+    //gameTime
+
     // createdBy: {
     //     type: 
     // }
-    // skill
+
+    // player count--integer
+    
+    //array of player names
+
+    // skill level
 })
 
 const User = model('Game', GameSchema);
