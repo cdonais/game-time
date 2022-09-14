@@ -39,9 +39,8 @@ return (
                                       setCurrentNavLink(navLink);
                                     }
                                     if (navLink.name === "Find Game") {
-                                    }                     
-                                      else {
-                                      setCurrentNavLink(navLink);
+                                    } else {
+                                     setCurrentNavLink(navLink);
                                      }
                                       setCurrentNavLink(navLink);
                                      }}
