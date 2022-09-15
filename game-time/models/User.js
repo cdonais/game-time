@@ -10,7 +10,10 @@ const userSchema = new Schema({
     // password: {
     //     type: Password
     // }
-    // skill level
+    userSkill: {
+        type: String,
+        default: 'Beginner'
+    }
 })
 
 const User = model('User', userSchema);
