@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-//import Nav from './components/Nav';
 
 function App() {
-  const [navLinks] = useState([
+  const [navLinks, setNavLinks] = useState([
     {
       name: 'Home'
     },
@@ -31,7 +30,8 @@ function App() {
       navLinks={navLinks}
       setcurrentNavLink
       currentNavLink={currentNavLink}
-      renderLink={renderLink}>
+      renderLink={renderLink}
+      setNavLinks={setNavLinks}>
       </nav>
       <nav></nav>
       <main></main>
