@@ -1,25 +1,52 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
-const GameSchema = new Schema({
+const GameSchema = new Schema(
+  {
     gameLocation: {
-        type: String
+      type: String,
+      required: true,
+      trim: true,
     },
-    gameDate: {
-        type: Date
-    }
-    //gameTime
-
+    gameName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    // gameDate: {
+    //     type: Date
+    // },
+    // gameTime: {
+    //     type: String,
+    // },
     // createdBy: {
-    //     type: 
-    // }
+    //     type: String,
+    // },
+    // playerCount: {
+    //     type: Number,
+    // },
+    playerArray: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+    skillLevel: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
     // player count--integer
-    
+
     //array of player names
 
     // skill level
-})
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
+);
 
-const User = model('Game', GameSchema);
+const User = model("Game", GameSchema);
 
 module.exports = User;
