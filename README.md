@@ -8,9 +8,11 @@ AS AN multisports athelete I WANT to be able to connect and play skilled athelet
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/cdonais/game-time)
 ![GitHub issues](https://img.shields.io/github/issues/cdonais/game-time)
 
+# Table of Contents
+
 ## Installation
 
-# Contributors
+## Contributors
 
 ### Front-end developers
 
@@ -27,3 +29,5 @@ AS AN multisports athelete I WANT to be able to connect and play skilled athelet
 ## Questions
 
 Created by: [Team G6]()
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
