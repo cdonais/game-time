@@ -1,21 +1,36 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
-const userSchema = new Schema({
-    userName: {
-        type: String
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
     },
-    // email: {
-    //     type: String
-    // },
-    // password: {
-    //     type: Password
-    // }
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, "Must match an email address!"],
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 5,
+    },
     userSkill: {
-        type: String,
-        default: 'Beginner'
-    }
-})
+      type: String,
+      default: "Beginner",
+    },
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
+);
 
-const User = model('User', userSchema);
+const User = model("User", userSchema);
 
 module.exports = User;

@@ -1,23 +1,39 @@
-const mongoose = require("mongoose");
 const express = require("express");
+// import ApolloServer
+const { ApolloServer } = require("apollo-server-express");
+
+// import our typeDefs and resolvers
+const { typeDefs, resolvers } = require("./schemas");
+const db = require("./config/connection");
+
+const PORT = process.env.PORT || 3001;
+// create a new Apollo server and pass in our schema data
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
 
-app.use(require("../game-time/routes"));
+// Create a new instance of an Apollo server with the GraphQL schema
+const startApolloServer = async (typeDefs, resolvers) => {
+  await server.start();
+  // integrate our Apollo server with the Express application as middleware
+  server.applyMiddleware({ app });
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:27017/game-time",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+  db.once("open", () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      // log where we can go to test our GQL API
+      console.log(
+        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+      );
+    });
+  });
+};
 
-mongoose.set("debug", true);
-
-app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
+// Call the async function to start the server
+startApolloServer(typeDefs, resolvers);
