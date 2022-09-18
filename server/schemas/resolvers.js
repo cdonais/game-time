@@ -40,17 +40,17 @@ const resolvers = {
       const game = await Game.create(args);
       return game;
     },
-    addPlayer: async (parent, args, context) => {
+    addPlayer: async (parent, { gameId, playerInfo }, context) => {
+      console.log(context.user);
       if (context.user) {
-        console.log(context.user);
-
-        const game = await Game.findOneAndUpdate(
-          { _id: args._id },
-          { $addToSet: { players: context.user.username } },
+        const updatedGame = await Game.findOneAndUpdate(
+          { _id: gameId },
+          {
+            $push: { players: { playerInfo, username: context.user.username } },
+          },
           { new: true }
         );
-
-        return game;
+        return updatedGame;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
