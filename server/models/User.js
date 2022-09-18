@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
   {
@@ -30,6 +31,16 @@ const userSchema = new Schema(
     },
   }
 );
+
+userSchema.methods.isCorrectPassword = async function (password) {
+  // ASK TA ABOUT THIS. COULDN'T GET THIS TO RETURN TRUE
+  // return bcrypt.compare(password, this.password);
+  if (password === this.password) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 const User = model("User", userSchema);
 

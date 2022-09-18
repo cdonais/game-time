@@ -37,7 +37,9 @@ function App() {
         currentNavLink={currentNavLink}
         renderLink={renderLink}
       ></Nav>
-      <main></main>
+      <main>
+        <div>Find Games</div>
+      </main>
     </div>
   );
 }
