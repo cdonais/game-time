@@ -45,11 +45,14 @@ import Signup from "./components/Sign-up";
 function App() {
   return (
     <div>
-      <Nav></Nav>
+      <Nav
+        navLinks={navLinks}
+        setcurrentNavLink
+        currentNavLink={currentNavLink}
+        renderLink={renderLink}
+      ></Nav>
       <main>
-        <Login></Login>
-        <Signup></Signup>
-        <FindGame></FindGame>
+        <div>Find Games</div>
       </main>
     </div>
   )

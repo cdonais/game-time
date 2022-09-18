@@ -18,13 +18,10 @@ const GameSchema = new Schema(
     // gameTime: {
     //     type: String,
     // },
-    // createdBy: {
-    //     type: String,
-    // },
-    // playerCount: {
-    //     type: Number,
-    // },
-    playerArray: {
+    createdBy: {
+      type: String,
+    },
+    players: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },
