@@ -1,10 +1,7 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 
-function Nav(props) {
-    const { navLinks = [], 
-    setCurrentNavLink,
-    currentNavLink,
-} = props;
+function Nav() {
     
 return (
     <header className="container-fluid">
@@ -25,7 +22,7 @@ return (
                     <div className="collapse navbar-collapse"
                         id="navbarToggleExternalContent"></div>
                         <ul className="navbar-nav">
-                            {navLinks.map((navLink) => (
+                            {/* {navLinks.map((navLink) => (
                                 <li key={navLink.name}>
                                  <span>
                                     <a
@@ -49,8 +46,23 @@ return (
                                      </a>
                                     </span>
                                 </li>
-                            ))}
+                            ))} */}
                         </ul>
+                        <NavLink to='/' end={true}>
+                            Dashboard
+                        </NavLink>
+                        <NavLink to='/creategame'>
+                            Create Game
+                        </NavLink>
+                        <NavLink to='/findgame'>
+                            Find a Game
+                        </NavLink>
+                        <NavLink to='/login'>
+                            Login
+                        </NavLink>
+                        <NavLink to='/signup'>
+                            Signup
+                        </NavLink>
                 </nav>
             </div>
         </section>

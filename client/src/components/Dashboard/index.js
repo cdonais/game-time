@@ -7,7 +7,7 @@ const Dashboard = () => {
                 <div className="row">
                     <div className='col-lg-7 d-flex align-items-center'>
                     </div>
-                    <h2>Dashboard</h2>
+                    <h2>My Games:</h2>
                     </div>
                 </div>
         </section>
