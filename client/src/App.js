@@ -8,15 +8,15 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import Nav from "./components/Nav";
-import Dashboard from "./components/Dashboard";
-import CreateGame from "./components/Create-Game";
-import FindGame from "./components/Find-Game";
+import Dashboard from "./pages/Dashboard";
+import CreateGame from "./pages/CreateGame";
+import FindGame from "./pages/FindGame";
 // import Footer from "./components/Footer";
-import Login from "./components/Log-in";
-import Signup from "./components/Sign-up";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
 const client = new ApolloClient({
@@ -35,6 +35,7 @@ function App() {
           <Route path="/creategame" element={<CreateGame />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<h1>404: This Isn't A Real Page Fool</h1>} />
         </Routes>
         {/* <Footer></Footer> */}
       </Router>

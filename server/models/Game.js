@@ -7,35 +7,32 @@ const GameSchema = new Schema(
       required: true,
       trim: true,
     },
-    gameName: {
+    gameDate: {
       type: String,
       required: true,
       trim: true,
     },
-    // gameDate: {
-    //     type: Date
-    // },
-    // gameTime: {
-    //     type: String,
-    // },
+    gameTime: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     createdBy: {
       type: String,
+      required: true,
+      trim: true,
     },
-    players: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
+    players: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
     skillLevel: {
       type: String,
       required: true,
       trim: true,
     },
-
-    // player count--integer
-
-    //array of player names
-
-    // skill level
   },
   {
     toJSON: {
