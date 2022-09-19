@@ -29,13 +29,14 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: 0.1em;
   background: var(--dark);
   color: var(--light);
   font-family: "Poppins", sans-serif;
+  text-shadow: 2px 2px 8px white;
 }
 
 h1,
@@ -48,6 +49,7 @@ h6 {
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
+  text-shadow: 2px 2px 8px #ff0000;
 }
 
 h1 {
@@ -78,12 +80,14 @@ h6 {
 p {
   font-size: 1.1rem;
   margin-top: 0;
+  text-shadow: 2px 2px 8px #ff0000;
 }
 
 a {
   color: var(--tertiary);
   text-decoration: none;
   font-weight: bold;
+  text-shadow: 2px 2px 8px #ff0000;
 }
 
 a:hover {
@@ -91,7 +95,7 @@ a:hover {
 }
 
 header {
-  background-color:#000000;
+  background-color: #000000;
   /*background-image: url(../src/assets/basketball.png);*/
 }
 
@@ -109,7 +113,7 @@ button {
   cursor: pointer;
   margin: 0 1px;
   background-color: var(--secondary);
-} 
+}
 
 button:hover {
   opacity: 0.8;
@@ -128,7 +132,6 @@ img {
 span[role="img"] {
   cursor: default;
 }
-
 
 input {
   font-size: 1rem;
@@ -264,7 +267,7 @@ textarea {
   margin: 50px auto;
   padding: 15px;
   width: 960px;
-} 
+}
 
 .modalTitle {
   font-size: 18px;
@@ -282,7 +285,7 @@ button {
   font-weight: 600;
   margin-bottom: 30px;
   padding: 10px 15px;
-} 
+}
 
 a {
   border-radius: 5px;
@@ -291,7 +294,7 @@ a {
   padding: 2px 4px;
   margin-left: -2px;
   margin-right: -2px;
-} 
+}
 
 .active {
   color: var(--secondary);
@@ -308,9 +311,9 @@ form {
   display: flex;
   justify-content: space-between;
   background-image: url(../src/assets/basketball.jpeg);
-    padding: 100px 110px;
-    margin-left: 10px;
-    border: 2px solid; 
+  padding: 100px 110px;
+  margin-left: 10px;
+  border: 2px solid;
 }
 
 footer {
