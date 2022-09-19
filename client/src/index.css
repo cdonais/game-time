@@ -91,7 +91,8 @@ a:hover {
 }
 
 header {
-  background-image: url(../src/assets/basketball.png);
+  background-color:#000000;
+  /*background-image: url(../src/assets/basketball.png);*/
 }
 
 header a {
@@ -108,7 +109,7 @@ button {
   cursor: pointer;
   margin: 0 1px;
   background-color: var(--secondary);
-}
+} 
 
 button:hover {
   opacity: 0.8;
@@ -128,9 +129,6 @@ span[role="img"] {
   cursor: default;
 }
 
-form {
-  width: 40%;
-}
 
 input {
   font-size: 1rem;
@@ -266,7 +264,7 @@ textarea {
   margin: 50px auto;
   padding: 15px;
   width: 960px;
-}
+} 
 
 .modalTitle {
   font-size: 18px;
@@ -277,14 +275,14 @@ textarea {
 button {
   background: var(--primary);
   border: 0;
-  border-radius: 5px;
+  border-radius: 3px;
   color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 30px;
   padding: 10px 15px;
-}
+} 
 
 a {
   border-radius: 5px;
@@ -293,7 +291,7 @@ a {
   padding: 2px 4px;
   margin-left: -2px;
   margin-right: -2px;
-}
+} 
 
 .active {
   color: var(--secondary);
@@ -306,9 +304,13 @@ li {
 form {
   display: flex;
   justify-content: space-between;
+  background-image: url(../src/assets/basketball.jpeg);
+    padding: 100px 100px;
+    border: 2px solid; 
 }
 
 footer {
+  background-color: rgba(219, 73, 0, 0.875);
   position: fixed;
   left: 0;
   bottom: 0;
@@ -316,7 +318,7 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  background-image: url(../src/assets/basketball.png);
+  /*background-image: url(../src/assets/basketball.png);*/
   border-top: #000000 solid 2px;
 }
 .copy {
