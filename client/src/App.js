@@ -1,13 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
 import Nav from "./components/Nav";
-import Dashboard from "./components/Dashboard";
-import CreateGame from "./components/Create-Game";
-import FindGame from "./components/Find-Game";
-// import Footer from "./components/Footer";
-import Login from "./components/Log-in";
-import Signup from "./components/Sign-up";
+import Dashboard from "./pages/Dashboard";
+import CreateGame from "./pages/CreateGame";
+import FindGame from "./pages/FindGame";
+import Footer from "./components/Footer";
+import SocialLinks from "./components/Footer";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
