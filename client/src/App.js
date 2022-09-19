@@ -5,7 +5,8 @@ import Nav from "./components/Nav";
 import Dashboard from "./components/Dashboard";
 import CreateGame from "./components/Create-Game";
 import FindGame from "./components/Find-Game";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
+import SocialLinks from "./components/Footer";
 import Login from "./components/Log-in";
 import Signup from "./components/Sign-up";
 
@@ -21,8 +22,12 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
       </Routes>
-      {/* <Footer></Footer> */}
-    </Router>
+      <footer>
+        <Footer>
+      <SocialLinks></SocialLinks>
+      </Footer>
+      </footer>
+      </Router>
   );
 }
 
