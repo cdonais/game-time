@@ -1,19 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import {
-  ApolloProvider,
-  ApolloClient,
-  InMemoryCache,
-  createHttpLink,
-} from "@apollo/client";
 import Nav from "./components/Nav";
-import Dashboard from "./pages/Dashboard";
-import CreateGame from "./pages/CreateGame";
-import FindGame from "./pages/FindGame";
+import Dashboard from "./components/Dashboard";
+import CreateGame from "./components/Create-Game";
+import FindGame from "./components/Find-Game";
 // import Footer from "./components/Footer";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Login from "./components/Log-in";
+import Signup from "./components/Sign-up";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -37,7 +31,11 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<h1>404: This Isn't A Real Page Fool</h1>} />
         </Routes>
-        {/* <Footer></Footer> */}
+        <footer>
+          <Footer>
+            <SocialLinks></SocialLinks>
+          </Footer>
+        </footer>
       </Router>
     </ApolloProvider>
   );

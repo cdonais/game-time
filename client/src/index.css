@@ -303,3 +303,26 @@ form {
   display: flex;
   justify-content: space-between;
 }
+
+footer { 
+  display:flex;
+  align-items: center;
+  background-color: var(--dark);
+  border-top: #000000 solid 2px;
+}
+.copy {
+  color: var(--light);
+  font-family: Brush Script MT;
+  font-size: 22px;
+}
+.git {
+  color: var(--light);
+  height: 40px;
+  margin: 18px;
+  width: 54px;
+  height: 54px;
+  padding: 4px;   
+}
+.gitCont {
+  justify-content: flex-end;
+}
