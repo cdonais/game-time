@@ -275,7 +275,7 @@ textarea {
 button {
   background: var(--primary);
   border: 0;
-  border-radius: 3px;
+  border-radius: 5px;
   color: #fff;
   cursor: pointer;
   font-size: 16px;
@@ -302,10 +302,14 @@ li {
 }
 
 form {
+  color:white;
+  text-shadow: #000000;
+  font-weight: bold;
   display: flex;
   justify-content: space-between;
   background-image: url(../src/assets/basketball.jpeg);
-    padding: 100px 100px;
+    padding: 100px 110px;
+    margin-left: 10px;
     border: 2px solid; 
 }
 

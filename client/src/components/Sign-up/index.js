@@ -9,22 +9,20 @@ function Signup() {
                 Email:
                 <input type="text" name="email" />
             </label>
-            <input type="submit" value="Submit" />
             <label>
                 Username:
                 <input type="text" name="username" />
             </label>
-            <input type="submit" value="Submit" />
             <label>
                 Password:
                 <input type="text" name="password" />
             </label>
-            <input type="submit" value="Submit" />
             <section className='skill'>
               <h3>Skill Level:</h3>  
              <input type="radio" value="Beginner" name="skill"/> Beginner
              <input type="radio" value="Intermediate" name="skill"/> Intermediate   
-             <input type="radio" value="Advanced" name="skill"/> Advanced   
+             <input type="radio" value="Advanced" name="skill"/> Advanced 
+             <input type="submit" value="Submit" />  
    
             </section>
             </form>
