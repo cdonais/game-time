@@ -25,6 +25,7 @@ function Nav() {
               id="navbarToggleExternalContent"
             ></div>
             <ul className="navbar-nav">
+              <h1> Game Time </h1>
               <li>
                 <NavLink to="/" end={true}>
                   Dashboard
