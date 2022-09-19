@@ -92,7 +92,7 @@ a:hover {
 }
 
 header {
-  background: var(--dark);
+  background-image: url(../src/assets/basketball.png);
 }
 
 header a {
@@ -307,8 +307,9 @@ form {
 footer { 
   display:flex;
   align-items: center;
-  background-color: var(--dark);
+  background-image: url(../src/assets/basketball.png);
   border-top: #000000 solid 2px;
+  position:relative; 
 }
 .copy {
   color: var(--light);
