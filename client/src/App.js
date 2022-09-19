@@ -13,6 +13,7 @@ function App() {
 
   return (
     <Router>
+      <h1>Game Time</h1>
       <Nav/>
       <Routes>
         <Route path="/" element={<Dashboard/>}/>
