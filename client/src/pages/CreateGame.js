@@ -5,7 +5,14 @@ import { ADD_GAME } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const Create = (props) => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({
+    gameLocation: "",
+    gameDate: "",
+    gameTime: "",
+    createdBy: "",
+    skillLevel: "",
+  });
+
   const [create, { error }] = useMutation(ADD_GAME);
 
   // update state based on form input changes
