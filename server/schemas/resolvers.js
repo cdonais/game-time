@@ -5,16 +5,16 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().select("-__v");
+      return User.find().populate("user");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).select("-__v");
+      return User.findOne({ username }).populate("user");
     },
     games: async () => {
       return Game.find();
     },
     game: async (parent, { _id }) => {
-      return Game.findOne({ _id }).select("-__v").populate("players");
+      return Game.findOne({ _id }).populate("user");
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -40,16 +40,15 @@ const resolvers = {
       const game = await Game.create(args);
       return game;
     },
-    addPlayer: async (parent, { gameId, playerInfo }, context) => {
-      console.log(context.user);
+    addPlayer: async (parent, { gameId, userId }, context) => {
+      const username = context.user.username;
       if (context.user) {
         const updatedGame = await Game.findOneAndUpdate(
           { _id: gameId },
-          {
-            $push: { players: { playerInfo, username: context.user.username } },
-          },
+          { $addToSet: { players: userId, username } },
           { new: true }
         );
+
         return updatedGame;
       }
       throw new AuthenticationError("You need to be logged in!");

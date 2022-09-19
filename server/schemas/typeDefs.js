@@ -36,7 +36,7 @@ const typeDefs = gql`
       gameLocation: String!
       skillLevel: String!
     ): Game
-    addPlayer(_id: ID!, player: String!): Game
+    addPlayer(gameId: ID, userId: ID!): Game
   }
 
   type Auth {
