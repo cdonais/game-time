@@ -33,7 +33,7 @@ function FindGame() {
 
   if (loading) {
     return <h3>No Games Yet</h3>;
-  } else {
+  } 
     return (
       <section className="container">
         <br></br>
@@ -89,6 +89,7 @@ function FindGame() {
       </section>
     );
   }
-}
+
+
 
 export default FindGame;
