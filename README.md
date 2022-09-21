@@ -21,6 +21,8 @@ If the user chooses to create their own game, they must go to the "create game" 
 ### Installation
 No installation required. Simply click on the URL provided and start playing!
 
+You can access the Game Time website here: https://gametime-g6.herokuapp.com/  
+
 ### User Story
 AS an athlete with no athletic friends, 
 I WANT an application to communicate with other bored athletes, 
@@ -36,7 +38,6 @@ Back-end developers:
 - Joseph Darville
 - Carly Donais
 - Bryant O. Fowler
-
 
 ### Questions
 Created by: [Team G6]()
