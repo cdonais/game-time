@@ -3,7 +3,7 @@ import githubIcon from "../../assets/github-logo.png";
 
 const SocialLinks = () => {
   return (
-    <footer className="w-100">
+    <div className="w-100 bg-secondary p-4">
       <div className="container">
         <p className="copy col">&copy; 2022 Game Time</p>
         <div className="git-cont">
@@ -12,7 +12,7 @@ const SocialLinks = () => {
           </a>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 export default SocialLinks;

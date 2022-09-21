@@ -33,8 +33,7 @@ const Create = (props) => {
       const { data } = await create({
         variables: { ...formState },
       });
-
-      Auth.create(data.create.token);
+      console.log(data);
     } catch (e) {
       console.error(e);
     }
@@ -50,57 +49,69 @@ const Create = (props) => {
   };
 
   return (
-    <section>
-      <h2>Create Game:</h2>
-      <form onSubmit={handleFormSubmit}>
-        <label>
-          Location:
+    <section className="container">
+      <div className="row">
+        <h2 className="col-sm-12 text-center">Create Game:</h2>
+      </div>
+
+      <form onSubmit={handleFormSubmit} className="row">
+        <label className="col-sm-12 col-md-4 col-xl-2 text-center">
+          <div>Location:</div>
           <input
             type="text"
             name="gameLocation"
             value={formState.gameLocation}
             onChange={handleChange}
+            className="w-100"
           />
         </label>
-        <label>
-          Date:
+        <label className="col-sm-12 col-md-4 col-xl-2 text-center">
+          <div>Date:</div>
           <input
             type="date"
             name="gameDate"
             value={formState.gameDate}
             onChange={handleChange}
+            className="w-100 text-center"
           />
         </label>
-        <label>
-          Time:
+        <label className="col-sm-12 col-md-4 col-xl-2 text-center">
+          <div>Time:</div>
           <input
             type="time"
             name="gameTime"
             value={formState.gameTime}
             onChange={handleChange}
+            className="w-100 text-center"
           />
         </label>
-        <label>
-          Created By:
+        <label className="col-sm-12 col-md-4 col-xl-2 text-center">
+          <div>Created By:</div>
           <input
             type="text"
             name="createdBy"
             value={formState.createdBy}
             onChange={handleChange}
+            className="w-100 text-center"
           />
         </label>
-        <label>
-          Skill Level:
+        <label className="col-sm-12 col-md-4 col-xl-2 text-center">
+          <div>Skill Level:</div>
           <input
             type="text"
             name="skillLevel"
             value={formState.skillLevel}
             onChange={handleChange}
+            className="w-100 text-center"
           />
         </label>
-        <button type="submit">Submit</button>
+        <div className="col-sm-12 col-md-4 col-xl-2 text-center">
+          <br></br>
+          <button type="submit" className="w-100 text-center">
+            Submit
+          </button>
+        </div>
       </form>
-
       {error && <div>Game creation failed</div>}
     </section>
   );

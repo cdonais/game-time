@@ -39,22 +39,27 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/findgame" element={<FindGame />} />
-          <Route path="/creategame" element={<CreateGame />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="*" element={<h1>404: This Isn't A Real Page Fool</h1>} />
-        </Routes>
-        <footer>
+      <body className="flex">
+        <Router>
+          <Nav />
+          <main className="h-100">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/findgame" element={<FindGame />} />
+              <Route path="/creategame" element={<CreateGame />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route
+                path="*"
+                element={<h1>404: This Isn't A Real Page Fool</h1>}
+              />
+            </Routes>
+          </main>
           <Footer>
             <SocialLinks></SocialLinks>
           </Footer>
-        </footer>
-      </Router>
+        </Router>
+      </body>
     </ApolloProvider>
   );
 }

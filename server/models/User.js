@@ -25,6 +25,7 @@ const userSchema = new Schema(
       default: "Beginner",
     },
     userGames: [{ type: Schema.Types.ObjectId, ref: "Game" }],
+    createdGames: [{ type: Schema.Types.ObjectId, ref: "Game" }],
   },
   {
     toJSON: {

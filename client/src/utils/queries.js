@@ -74,6 +74,10 @@ export const QUERY_ME = gql`
       userGames {
         _id
         gameLocation
+        gameDate
+        gameTime
+        createdBy
+        skillLevel
       }
     }
   }

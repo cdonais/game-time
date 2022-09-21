@@ -39,26 +39,38 @@ const Login = (props) => {
     });
   };
   return (
-    <section>
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <label>Email:</label>
-        <input
-          type="text"
-          name="email"
-          placeholder="blah@pmail.com"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="..."
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <button type="submit">Submit</button>
+    <section className="container">
+      <h2 className="row justify-content-center">Login</h2>
+      <form
+        onSubmit={handleFormSubmit}
+        className="row justify-content-center text-center"
+      >
+        <div className="m-2 col-sm-12 col-lg-6">
+          <label className="col-sm-12 col-lg-6">Email:</label>
+          <input
+            type="text"
+            name="email"
+            placeholder="blah@pmail.com"
+            value={formState.email}
+            onChange={handleChange}
+            className="w-50"
+          />
+        </div>
+        <div className="m-2 col-sm-12 col-lg-6">
+          <label className="col-sm-12 col-lg-6">Password:</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="..."
+            value={formState.password}
+            onChange={handleChange}
+            className="w-50 mb-4"
+          />
+        </div>
+
+        <button type="submit" className="w-50 col-sm-12">
+          Submit
+        </button>
       </form>
 
       {error && <div>Login failed</div>}

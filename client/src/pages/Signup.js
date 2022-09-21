@@ -37,11 +37,14 @@ const Signup = () => {
     }
   };
   return (
-    <section className="signupform">
-      <h2>Sign Up:</h2>
-      <form onSubmit={handleFormSubmit}>
+    <section className="container">
+      <h2 className="row justify-content-center">Sign Up:</h2>
+      <form
+        onSubmit={handleFormSubmit}
+        className="row justify-content-center text-center"
+      >
         <label>
-          Email:
+          <div>Email:</div>
           <input
             type="text"
             name="email"
@@ -50,7 +53,7 @@ const Signup = () => {
           />
         </label>
         <label>
-          Username:
+          <div>Username:</div>
           <input
             type="text"
             name="username"
@@ -58,8 +61,8 @@ const Signup = () => {
             onChange={handleChange}
           />
         </label>
-        <label>
-          Password:
+        <label className="col-sm-12 mb-4">
+          <div>Password:</div>
           <input
             type="password"
             name="password"
@@ -67,13 +70,11 @@ const Signup = () => {
             onChange={handleChange}
           />
         </label>
-        {/* <section className="skill">
-          <h3>Skill Level:</h3>
-          <input type="radio" value="Beginner" name="skill" /> Beginner
-          <input type="radio" value="Intermediate" name="skill" /> Intermediate
-          <input type="radio" value="Advanced" name="skill" /> Advanced
-        </section> */}
-        <button type="submit">Submit</button>
+        <div>
+          <button type="submit" className="w-50">
+            Submit
+          </button>
+        </div>
       </form>
 
       {error && <div>Signup failed</div>}

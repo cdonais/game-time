@@ -14,62 +14,44 @@ function Nav() {
   const users = data?.users || [];
 
   return (
-    <header className="container-fluid">
-      <section className="d-flex flex row">
-        <div className="d-flex ms-auto">
-          <nav className="navbar navbar-expand-lg">
-            <button
-              className="navbar-toggler collapsed d-flex d-lg-none d-flex flex-column justify-content-around"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarToggleExternalContent"
-              aria-controls="#navbarToggleExternalContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="toggler-icon top-bar"></span>
-              <span className="toggler-icon middle-bar"></span>
-              <span className="toggler-icon bottom-bar"></span>
-            </button>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarToggleExternalContent"
-            ></div>
-            <ul className="navbar-nav">
-              <h1> Game Time </h1>
-              <li>
-                <NavLink to="/" end={true}>
-                  Dashboard
-                </NavLink>
+    <header>
+      <div className="container">
+        <ul className="row justify-content-center text-center">
+          <h1 className="col-sm-12 col-md-4 col-lg-2 align-text-middle">
+            {" "}
+            Game Time{" "}
+          </h1>
+          <li className="col-sm-12 col-md-4 col-lg-2">
+            <NavLink to="/" end={true}>
+              Dashboard
+            </NavLink>
+          </li>
+          <li className="col-sm-12 col-md-4 col-lg-2">
+            <NavLink to="/creategame">Create Game</NavLink>
+          </li>
+          <li className="col-sm-12 col-md-4 col-lg-2">
+            <NavLink to="/findgame">Find a Game</NavLink>
+          </li>
+          {Auth.loggedIn() ? (
+            <>
+              <li className="col-sm-12 col-md-4 col-lg-2">
+                <a href="/" onClick={logout}>
+                  Logout
+                </a>
               </li>
-              <li>
-                <NavLink to="/creategame">Create Game</NavLink>
+            </>
+          ) : (
+            <>
+              <li className="col-sm-12 col-md-4 col-lg-2">
+                <NavLink to="/login">Login</NavLink>
               </li>
-              <li>
-                <NavLink to="/findgame">Find a Game</NavLink>
+              <li className="col-sm-12 col-md-4 col-lg-2">
+                <NavLink to="/signup">Signup</NavLink>
               </li>
-              {Auth.loggedIn() ? (
-                <>
-                  <li>
-                    <a href="/" onClick={logout}>
-                      Logout
-                    </a>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li>
-                    <NavLink to="/login">Login</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/signup">Signup</NavLink>
-                  </li>
-                </>
-              )}
-            </ul>
-          </nav>
-        </div>
-      </section>
+            </>
+          )}
+        </ul>
+      </div>
     </header>
   );
 }

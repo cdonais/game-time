@@ -8,6 +8,7 @@ const typeDefs = gql`
     password: String
     userSkill: String
     userGames: [Game]
+    createdGames: [Game]
   }
 
   type Game {

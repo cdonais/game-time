@@ -1,7 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
-import Auth from "../utils/auth";
 
 const Dashboard = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -20,10 +19,10 @@ const Dashboard = () => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-7 d-flex align-items-center"></div>
-                <h2>
+                <h2 className="text-center">
                   <br></br>My Games:
-                  <div>
-                    <ul>
+                  <div className="container">
+                    <ul className="row justify-content-center">
                       {upcomingGames.map((game) => (
                         <li key={game._id}>
                           Date: {game.gameDate}
@@ -38,16 +37,6 @@ const Dashboard = () => {
                       ))}
                     </ul>
                   </div>
-                </h2>
-              </div>
-            </div>
-          </section>
-          <section id="Dashboard" className="col">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-7 d-flex align-items-center"></div>
-                <h2>
-                  <br></br>Upcoming Games:
                 </h2>
               </div>
             </div>
