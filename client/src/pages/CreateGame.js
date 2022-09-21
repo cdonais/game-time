@@ -34,7 +34,7 @@ const Create = (props) => {
         variables: { ...formState },
       });
 
-      Auth.login(data.addGame.token);
+      Auth.create(data.create.token);
     } catch (e) {
       console.error(e);
     }
