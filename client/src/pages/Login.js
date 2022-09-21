@@ -52,7 +52,7 @@ const Login = (props) => {
         />
         <label>Password:</label>
         <input
-          type="text"
+          type="password"
           name="password"
           placeholder="..."
           value={formState.password}
@@ -60,6 +60,8 @@ const Login = (props) => {
         />
         <button type="submit">Submit</button>
       </form>
+
+      {error && <div>Login failed</div>}
     </section>
   );
 };

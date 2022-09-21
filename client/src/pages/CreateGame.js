@@ -57,7 +57,7 @@ const Create = (props) => {
           Location:
           <input
             type="text"
-            name="location"
+            name="gameLocation"
             value={formState.gameLocation}
             onChange={handleChange}
           />
@@ -65,8 +65,8 @@ const Create = (props) => {
         <label>
           Date:
           <input
-            type="text"
-            name="date"
+            type="date"
+            name="gameDate"
             value={formState.gameDate}
             onChange={handleChange}
           />
@@ -74,8 +74,8 @@ const Create = (props) => {
         <label>
           Time:
           <input
-            type="text"
-            name="time"
+            type="time"
+            name="gameTime"
             value={formState.gameTime}
             onChange={handleChange}
           />
@@ -93,13 +93,15 @@ const Create = (props) => {
           Skill Level:
           <input
             type="text"
-            name="skill"
+            name="skillLevel"
             value={formState.skillLevel}
             onChange={handleChange}
           />
         </label>
         <button type="submit">Submit</button>
       </form>
+
+      {error && <div>Game creation failed</div>}
     </section>
   );
 };

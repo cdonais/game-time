@@ -66,13 +66,15 @@ export const QUERY_GAME = gql`
 // ME QUERY
 
 export const QUERY_ME = gql`
-  query Me {
+  query me {
     me {
       _id
       username
       email
-      password
-      userSkill
+      userGames {
+        _id
+        gameLocation
+      }
     }
   }
 `;

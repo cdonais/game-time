@@ -61,7 +61,7 @@ const Signup = () => {
         <label>
           Password:
           <input
-            type="text"
+            type="password"
             name="password"
             value={formState.password}
             onChange={handleChange}
@@ -75,6 +75,8 @@ const Signup = () => {
         </section> */}
         <button type="submit">Submit</button>
       </form>
+
+      {error && <div>Signup failed</div>}
     </section>
   );
 };
