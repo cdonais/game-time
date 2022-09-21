@@ -1,7 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_USERS } from "../../utils/queries";
+import Auth from "../../utils/auth";
 
 function Nav() {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
+  const { loading, data } = useQuery(QUERY_USERS);
+  const users = data?.users || [];
+
   return (
     <header className="container-fluid">
       <section className="d-flex flex row">
@@ -37,12 +48,24 @@ function Nav() {
               <li>
                 <NavLink to="/findgame">Find a Game</NavLink>
               </li>
-              <li>
-                <NavLink to="/login">Login</NavLink>
-              </li>
-              <li>
-                <NavLink to="/signup">Signup</NavLink>
-              </li>
+              {Auth.loggedIn() ? (
+                <>
+                  <li>
+                    <a href="/" onClick={logout}>
+                      Logout
+                    </a>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <NavLink to="/login">Login</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/signup">Signup</NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </nav>
         </div>

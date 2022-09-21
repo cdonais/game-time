@@ -26,14 +26,14 @@ export const ADD_USER = gql`
   }
 `;
 
-// export const DELETE_USER = gql`
-//   mutation DeleteUser($id: ID!) {
-//     deleteUser(_id: $id) {
-//       _id
-//       username
-//     }
-//   }
-// `;
+export const DELETE_USER = gql`
+  mutation DeleteUser($id: ID!) {
+    deleteUser(_id: $id) {
+      _id
+      username
+    }
+  }
+`;
 
 // GAME MUTATIONS
 

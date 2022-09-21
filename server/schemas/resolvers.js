@@ -8,7 +8,7 @@ const resolvers = {
       return User.find().populate("user");
     },
     user: async (parent, { _id }) => {
-      return User.findOne({ _id }).populate("user");
+      return User.findOne({ _id }).populate("user", "userGames");
     },
     games: async () => {
       return Game.find().populate("players");
@@ -18,9 +18,9 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id }).select(
-          "-__v"
-        );
+        const userData = await User.findOne({ _id: context.user._id })
+          .select("-__v")
+          .populate("userGames");
 
         return userData;
       }
@@ -47,17 +47,21 @@ const resolvers = {
       return Game.findOneAndDelete({ _id });
     },
     addPlayer: async (parent, { gameId, userId }, context) => {
-      const username = context.user.username;
       if (context.user) {
+        console.log(context.user.userGames);
         const updatedGame = await Game.findOneAndUpdate(
           { _id: gameId },
-          { $addToSet: { players: userId, username } },
+          { $addToSet: { players: userId } },
           { new: true }
         ).populate("players");
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: userId },
+          { $addToSet: { userGames: gameId } },
+          { new: true }
+        ).populate("userGames");
 
         return updatedGame;
       }
-      throw new AuthenticationError("You need to be logged in!");
     },
     removePlayer: async (parent, { gameId, userId }, context) => {
       if (context.user) {
