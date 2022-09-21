@@ -7,10 +7,9 @@ const Dashboard = () => {
   const user = data?.me || {};
 
   const upcomingGames = data?.me.userGames || [];
-  console.log(upcomingGames);
 
-  if (loading) {
-    return <h3>No Games Yet</h3>;
+  if (!upcomingGames.Length) {
+    return <h3 className="text-center">No Games Yet</h3>;
   } else {
     return (
       <div className="container">
