@@ -52,8 +52,7 @@ function Dashboard() {
                   
                 </h2>
                 <div className="container">
-                    <ul className="row justify-content-center">
-                      <li>Test</li>
+                    <ul className="d-flex flex-row justify-content-center">
                       {upcomingGames.map((game) => (
                         <li key={game._id}>
                           Date: {game.gameDate}
