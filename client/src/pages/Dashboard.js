@@ -15,7 +15,28 @@ function Dashboard() {
       gameTime: "1pm",
       gameLocation: "Orlando",
       skillLevel: "Legendary",
-    }
+    },
+    {
+      _id: 2,
+      gameDate: "Wednesday 26th September, 2022",
+      gameTime: "11am",
+      gameLocation: "New York",
+      skillLevel: "Veteran",
+    },
+    {
+      _id: 3,
+      gameDate: "Thursday 27th September, 2022",
+      gameTime: "4pm",
+      gameLocation: "California",
+      skillLevel: "Master",
+    },
+    {
+      _id: 4,
+      gameDate: "Thursday 27th September, 2022",
+      gameTime: "5pm",
+      gameLocation: "Miami",
+      skillLevel: "Legendary",
+    },
   ]
   console.log(upcomingGames);
 
