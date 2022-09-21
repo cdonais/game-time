@@ -3,15 +3,22 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 
 function Dashboard() {
-  const { loading, data } = useQuery(QUERY_ME);
-  const user = data?.me || {};
+  // const { loading, data } = useQuery(QUERY_ME);
+  // const user = data?.me || {};
 
-  const upcomingGames = data?.me.userGames || [];
+  //  const upcomingGames = data?.me.userGames || [];
+
+  const upcomingGames = [
+    {
+      _id: 1,
+      gameDate: "Monday 24th September, 2022",
+      gameTime: "1pm",
+      gameLocation: "Orlando",
+      skillLevel: "Legendary",
+    }
+  ]
   console.log(upcomingGames);
 
-  if (loading) {
-    return <h3>No Games Yet</h3>;
-  } else {
     return (
       <div className="container">
         <div className="row">
@@ -21,8 +28,11 @@ function Dashboard() {
                 <div className="col-lg-7 d-flex align-items-center"></div>
                 <h2 className="text-center">
                   <br></br>My Games:
-                  <div className="container">
+                  
+                </h2>
+                <div className="container">
                     <ul className="row justify-content-center">
+                      <li>Test</li>
                       {upcomingGames.map((game) => (
                         <li key={game._id}>
                           Date: {game.gameDate}
@@ -37,7 +47,6 @@ function Dashboard() {
                       ))}
                     </ul>
                   </div>
-                </h2>
               </div>
             </div>
           </section>
@@ -45,6 +54,5 @@ function Dashboard() {
       </div>
     );
   }
-}
 
 export default Dashboard;
