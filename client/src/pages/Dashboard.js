@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 
-const Dashboard = () => {
+function Dashboard() {
   const { loading, data } = useQuery(QUERY_ME);
   const user = data?.me || {};
 
@@ -13,45 +13,38 @@ const Dashboard = () => {
     return <h3>No Games Yet</h3>;
   } else {
     return (
-      <section className="container">
-      <h2 className="row justify-content-center">Sign Up:</h2>
-      <form
-        onSubmit={handleFormSubmit}
-        className="row justify-content-center text-center"
-      >
-        <label>
-          <div>Email:</div>
-          <input
-            type="text"
-            name="email"
-            value={formState.email}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          <div>Username:</div>
-          <input
-            type="text"
-            name="username"
-            value={formState.username}
-            onChange={handleChange}
-          />
-        </label>
-        <label className="col-sm-12 mb-4">
-          <div>Password:</div>
-          <input
-            type="password"
-            name="password"
-            value={formState.password}
-            onChange={handleChange}
-          />
-        </label>
-        <div>
-          <button type="submit" className="w-50">
-            Submit
-          </button>
+      <div className="container">
+        <div className="row">
+          <section id="Dashboard" className="col">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-7 d-flex align-items-center"></div>
+                <h2 className="text-center">
+                  <br></br>My Games:
+                  <div className="container">
+                    <ul className="row justify-content-center">
+                      {upcomingGames.map((game) => (
+                        <li key={game._id}>
+                          Date: {game.gameDate}
+                          <br></br>
+                          Time: {game.gameTime}
+                          <br></br>
+                          Location: {game.gameLocation}
+                          <br></br>
+                          Skill Level: {game.skillLevel}
+                          <br></br>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </h2>
+              </div>
+            </div>
+          </section>
         </div>
-      </form>
-};
+      </div>
+    );
+  }
+}
 
 export default Dashboard;
