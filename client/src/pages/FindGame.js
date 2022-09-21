@@ -9,7 +9,7 @@ function FindGame() {
   const { loading, data } = useQuery(QUERY_GAMES);
   const games = data?.games || [];
 
-  Auth.loggedIn() ? console.log("logged in") : console.log("not logged in");
+  // Auth.loggedIn() ? console.log("logged in") : console.log("not logged in");
 
   const { data: userData } = useQuery(QUERY_ME);
   const user = userData?.me || {};
