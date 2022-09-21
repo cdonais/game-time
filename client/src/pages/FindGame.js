@@ -3,6 +3,7 @@ import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_GAMES, QUERY_ME } from "../utils/queries";
 import { ADD_PLAYER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import CommentBox from "../components/Comment";
 
 function FindGame() {
   const { loading, data } = useQuery(QUERY_GAMES);
@@ -77,6 +78,7 @@ function FindGame() {
                 >
                   Join Game!
                 </button>
+                <CommentBox/>
               </div>
               <div>
                 <br></br>
