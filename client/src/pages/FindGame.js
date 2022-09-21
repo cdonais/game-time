@@ -78,7 +78,7 @@ function FindGame() {
                 >
                   Join Game!
                 </button>
-                <CommentBox/>
+                {/* <CommentBox/> */}
               </div>
               <div>
                 <br></br>

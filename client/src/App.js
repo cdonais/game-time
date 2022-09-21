@@ -42,7 +42,7 @@ function App() {
       <body className="flex">
         <Router>
           <Nav />
-          <main className="h-100">
+          <main>
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/findgame" element={<FindGame />} />
