@@ -112,7 +112,6 @@ const Create = (props) => {
           </button>
         </div>
       </form>
-
       {error && <div>Game creation failed</div>}
     </section>
   );
