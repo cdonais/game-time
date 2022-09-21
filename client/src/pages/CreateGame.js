@@ -52,55 +52,56 @@ const Create = (props) => {
   return (
     <section>
       <h2>Create Game:</h2>
-      <form onSubmit={handleFormSubmit}>
-        <label>
-          Location:
-          <input
-            type="text"
-            name="gameLocation"
-            value={formState.gameLocation}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Date:
-          <input
-            type="date"
-            name="gameDate"
-            value={formState.gameDate}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Time:
-          <input
-            type="time"
-            name="gameTime"
-            value={formState.gameTime}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Created By:
-          <input
-            type="text"
-            name="createdBy"
-            value={formState.createdBy}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Skill Level:
-          <input
-            type="text"
-            name="skillLevel"
-            value={formState.skillLevel}
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit">Submit</button>
+      <form className="container" onSubmit={handleFormSubmit}>
+        <div>
+          <label className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            Location:
+            <input
+              type="text"
+              name="gameLocation"
+              value={formState.gameLocation}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            Date:
+            <input
+              type="date"
+              name="gameDate"
+              value={formState.gameDate}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            Time:
+            <input
+              type="time"
+              name="gameTime"
+              value={formState.gameTime}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            Created By:
+            <input
+              type="text"
+              name="createdBy"
+              value={formState.createdBy}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            Skill Level:
+            <input
+              type="text"
+              name="skillLevel"
+              value={formState.skillLevel}
+              onChange={handleChange}
+            />
+          </label>
+          <button type="submit">Submit</button>
+        </div>
       </form>
-
       {error && <div>Game creation failed</div>}
     </section>
   );
